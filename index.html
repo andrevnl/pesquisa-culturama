@@ -16,10 +16,10 @@
     <main>
         <header>
             <img src="img/logo-culturama.png" alt="Logo da Culturama" width="200">
-            <h1>Pesquisa Online</h1>
+            <h1>Pesquisa de opinião</h1>
         </header>
         <section>
-            <form action="" method="get">
+            <form action="sucesso.html" method="get">
 
                 <fieldset>
                     <legend>Dados Pessoais</legend>
@@ -37,11 +37,13 @@
                     <input type="email" id="userEmail" name="userEmail" required>
                     <br>
                     <label for="userPhone">Telefone</label>
-                    <input type="tel" id="userPhone" name="userPhone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
-                        placeholder="XX-XXXXX-XXXX">
+                    <input id="userPhone" type="tel" name="userPhone" pattern="[0-9]{11}"
+                        placeholder="Preencha com 11 digitos no formato: DDD + número sem espaços ou hífen", aria-describedby="phoneHelp">
+                    <small id="phoneHelp">Preencha com 11 digitos no formato: DDD + número sem espaços ou hífen</small>
                     <br>
                     <label for="userPhoto">Upload de foto</label>
-                    <input type="file" id="userPhoto" name="userPhoto" accept="image/*">
+                    <input type="file" id="userPhoto" name="userPhoto" accept="image/*" aria-describedby="imageHelp">
+                    <small id="imageHelp">Envie uma foto no formato PNG ou JPG</small>
                     <br>
                 </fieldset>
 
@@ -58,7 +60,7 @@
 
                     <br>
                     <label for="maritalStatus">Estado Civil:</label>
-                    <select name="maritalStatus">
+                    <select id="maritalStatus" name="maritalStatus">
                         <option value="notInformed">Selecione...</option>
                         <option value="solteiro">Solteiro(a)</option>
                         <option value="casado">Casado(a)</option>
@@ -68,7 +70,7 @@
 
                     <br>
                     <label for="userState">Estado:</label>
-                    <select name="userState">
+                    <select id="userState" name="userState">
                         <option value="notInformed">Selecione o Estado...</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -174,8 +176,8 @@
                     <br>
                 </fieldset>
 
-                <button type="submit" value="Enviar">Enviar</button>
-                <button type="reset" value="Limpar">Limpar</button>
+                <button type="submit" value="Enviar" aria-label="Enviar dados do formulário">Enviar</button>
+                <button type="reset" value="Limpar" aria-label="Limpar dados do formulário">Limpar</button>
 
         </section>
     </main>
